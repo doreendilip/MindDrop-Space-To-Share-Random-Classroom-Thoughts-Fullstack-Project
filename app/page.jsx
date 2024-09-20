@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Post from "./components/Post";
 import styles from "./page.module.css";
 import prisma from "@/lib/prisma";
@@ -20,6 +21,7 @@ export default async function Home() {
   const posts = await getPosts();
   return (
     <main className={styles.main}>
+      <Link href={'/add-post'}>Add Post</Link>
       <h1>📚 MindDrop- Your Space For Random Classroom Thoughts 💭 (lol, you won't be exposed!)</h1>
       <p className={styles.subtext}>Share your thoughts anonymously or non-anonymously!</p>
       <div className={styles.postsContainer}>
